@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require justgage.1.0.1
+//= require raphael-min
+//= require highcharts
+//= require exporting
 //= require turbolinks
 //= require_tree .

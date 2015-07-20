@@ -13,7 +13,7 @@ $(document).ready(function() {
       return FB.login(function(response) {
         if (response.authResponse) {
           return window.location = '/auth/facebook/callback';
-        }
+        }  
       });
     });
 

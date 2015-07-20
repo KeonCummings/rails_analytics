@@ -50,3 +50,7 @@ gem 'omniauth-facebook'
 
 #Use Koala to get facebook Insights
 gem "koala", "~> 2.0"
+
+#Font awesome rails
+gem "font-awesome-rails"
+

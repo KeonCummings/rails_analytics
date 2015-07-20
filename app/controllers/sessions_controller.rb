@@ -2,14 +2,22 @@ class SessionsController < ApplicationController
   def index
   end
 
-  def metrics
-    @metrics = page_info
+  def impressions
+  end
+
+  def pick_page
+  end
+
+  def engagements
+  end
+
+  def viral
   end
 
   def create
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
-    redirect_to metrics_path
+    redirect_to select_path
   end
 
   def destroy

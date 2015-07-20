@@ -1,6 +1,9 @@
 AnalyticsApp::Application.routes.draw do
   root 'sessions#index'
-  get 'metrics', to:  'sessions#metrics'
+  get 'impressions/:id', to:  'sessions#impressions', as: :impression
+  get 'engagements/:id', to:  'sessions#engagements', as: :engagement
+  get 'viral/:id', to:  'sessions#viral', as: :viral
+  get 'select', to: 'sessions#pick_page'
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
