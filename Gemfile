@@ -64,3 +64,6 @@ gem "font-awesome-rails"
 
 #heroku gems
 gem 'rails_12factor', group: :production
+
+#ruby versions
+ruby "2.2.0"
