@@ -75,32 +75,32 @@ class Insight < ActiveRecord::Base
   end
 end
 
-m = Koala::Facebook::API.new(User.find(5).oauth_token)
-m = m.get_connections('me', 'accounts')
-m = m.first['access_token']
-@post_graph = Koala::Facebook::API.new(m)
-@feed = @post_graph.get_connection('me', 'feed')
-@postid = @feed.first['id']
-@x = @post_graph.get_connections(@postid, 'likes', since: "2015-05-17", until: "2015-07-17")
-def my_loop()
-  @comments = 0
-  @count = 0
-  @comments += @x.length
-  while @x.next_page != nil
-     @comments += @x.length
-     @count += 1
-     @x = @x.next_page
-  end
-end
+# m = Koala::Facebook::API.new(User.find(5).oauth_token)
+# m = m.get_connections('me', 'accounts')
+# m = m.first['access_token']
+# @post_graph = Koala::Facebook::API.new(m)
+# @feed = @post_graph.get_connection('me', 'feed')
+# @postid = @feed.first['id']
+# @x = @post_graph.get_connections(@postid, 'likes', since: "2015-05-17", until: "2015-07-17")
+# def my_loop()
+#   @comments = 0
+#   @count = 0
+#   @comments += @x.length
+#   while @x.next_page != nil
+#      @comments += @x.length
+#      @count += 1
+#      @x = @x.next_page
+#   end
+# end
 
-def getPostIds(feed)
-  @pids = Array.new
-  feed.each {|f| @pids.push(f['id'])}
-  while feed.next_page != nil
-    feed = feed.next_page
-    feed.each {|f| @pids.push(f['id'])}
-  end
-end
+# def getPostIds(feed)
+#   @pids = Array.new
+#   feed.each {|f| @pids.push(f['id'])}
+#   while feed.next_page != nil
+#     feed = feed.next_page
+#     feed.each {|f| @pids.push(f['id'])}
+#   end
+# end
 
 
 

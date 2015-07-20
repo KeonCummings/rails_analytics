@@ -54,3 +54,5 @@ gem "koala", "~> 2.0"
 #Font awesome rails
 gem "font-awesome-rails"
 
+#heroku gems
+gem 'rails_12factor', group: :production
