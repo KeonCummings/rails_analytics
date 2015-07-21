@@ -16,5 +16,4 @@
 //= require raphael-min
 //= require highcharts
 //= require exporting
-//= require turbolinks
 //= require_tree .
