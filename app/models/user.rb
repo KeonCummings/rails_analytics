@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
+  # validates :name, presence: true
+  # validates :email, presence: true
+  # validates :password, length: { in: 6..20 }
+
   def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+    User.where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name
