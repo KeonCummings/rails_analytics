@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.from_omniauth(env["omniauth.auth"])
+    user = SocialUser.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
     redirect_to select_path
   end
